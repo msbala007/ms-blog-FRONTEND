@@ -1,0 +1,38 @@
+  <div className="p-2 bg-orange-700 ">
+    <div className="bg-white h-60  w-full  flex flex-row justify-around items-center p-4 rounded-2xl  ">
+      <div className=" ">
+        <img
+          src={building}
+          className="w-40 h-40 rounded-lg bg-orange-500 "
+        />
+      </div>
+      <div className="ml-4 w-80 space-y-2 ">
+        <h1>msbala</h1>
+        <p className="text-sm">
+          hyii imnbala feom amerisdv gthyehyrhy someuhyruef hyffbdvdud.hyii
+          imnbala feom amerisdv gthyehyrhy someuhyruef hyffbdvdud .hyii
+          imnbala feom amerisdv gthyehyrhy someuhyruef hyffbdvdud
+        </p>
+        <button className=" m-center bg-orange-600 p-2 rounded-full text-white">
+          READ MORE...
+        </button>
+      </div>
+    </div>
+  </div>
+</>
+  );
+
+
+
+
+   <div>
+    {blog &&
+    blog.map(({ id, name, photo, description }) => (
+      <div>
+        <h1>{name}</h1>
+        <img src={photo} className="h-24 w-24" />
+        <h1>{description}</h1>
+      </div>
+    ))}
+</div>
+ 
