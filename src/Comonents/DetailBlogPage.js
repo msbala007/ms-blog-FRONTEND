@@ -17,7 +17,7 @@ const DetailBlogPage = () => {
 
   const userBlogs = async () => {
     try {
-      const res = await axios.get(`https://ms-blog.onrender.com/v1/blog/${id}`);
+      const res = await axios.get(`${process.env.URL}/v1/blog/${id}`);
       const data = await res.data.blog;
       // console.log("{gtgdagdagta", res.data.blog);
       setblogs({
@@ -43,7 +43,7 @@ const DetailBlogPage = () => {
       <div className="mt-4 ">
         {user?.map(({ name, photo, _id }) => (
           <div className="flex items-center  flex-end ml-2" key={_id}>
-            <Avatar src={`https://ms-blog.onrender.com/profile/${photo}`} />
+            <Avatar src={`${process.env.URL}/profile/${photo}`} />
             <h2 className="ml-4">{name}</h2>
           </div>
         ))}
@@ -54,7 +54,7 @@ const DetailBlogPage = () => {
         </div>
         <div className=" xl:p-12 w-full md:  ">
           <img
-            src={`https://ms-blog.onrender.com/img/${blogs.image}`}
+            src={`${process.env.URL}/img/${blogs.image}`}
             alt=""
             className=" w-full sm:h-64 md:h-76 xl:h-1/2 object-cover rounded-xl sm:p-2 md:p-4  lg:p-6 "
           />

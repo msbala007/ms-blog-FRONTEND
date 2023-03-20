@@ -14,7 +14,7 @@ const BlogEditAndDelete = () => {
 
   const getPostDetails = async () => {
     try {
-      const res = await axios.get(`https://ms-blog.onrender.com/v1/blog/${id}`);
+      const res = await axios.get(`${process.env.URL}/v1/blog/${id}`);
       const data = await res.data.blog;
       setValue({
         name: data.name,
@@ -37,7 +37,7 @@ const BlogEditAndDelete = () => {
     try {
       setSpin(true)
       const res = await axios.put(
-        `https://ms-blog.onrender.com/v1/blog/post/update/${id}`,
+        `${process.env.URL}/v1/blog/post/update/${id}`,
 
         { name: value.name, description: value.description }
       );

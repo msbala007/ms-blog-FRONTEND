@@ -25,7 +25,7 @@ const UserPosts = () => {
   const userBlogs = async () => {
     setLoading(true);
     const res = await axios.get(
-      `https://ms-blog.onrender.com/v1/blog/user/${id}`
+      `${process.env.URL}/v1/blog/user/${id}`
     );
     setLoading(false);
     const data = await res.data.blogs.blogs;

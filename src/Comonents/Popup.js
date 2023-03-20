@@ -11,7 +11,7 @@ const Popup = ({ close, blog, id }) => {
   const deletePost = async () => {
     try {
       const res = await axios.delete(
-        `https://ms-blog.onrender.com/v1/blog/post/delete/${id}`
+        `${process.env.URL}/v1/blog/post/delete/${id}`
       );
       const data = await res.data.blog;
 

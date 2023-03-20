@@ -33,7 +33,7 @@ const MobileMenu = ({ close, name, photo }) => {
                 <h6 className="mr-2 line-clamp-1 w-20">{name}</h6>
                 {isLogedIn && (
                   <Avatar
-                    src={`https://ms-blog.onrender.com/profile/${photo}`}
+                    src={`${process.env.URL}/profile/${photo}`}
                     className="mr-2"
                   />
                 )}

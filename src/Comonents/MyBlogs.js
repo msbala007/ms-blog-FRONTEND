@@ -15,7 +15,7 @@ const MyBlogs = ({ blogId, title, image, description, user, date, i }) => {
   const [mine, setuser] = useState({});
   const userBlogs = async () => {
     const res = await axios.get(
-      `https://ms-blog.onrender.com/v1/blog/user/${id}`
+      `${process.env.URL}/v1/blog/user/${id}`
     );
 
     const userData = await res.data.blogs;
@@ -41,7 +41,7 @@ const MyBlogs = ({ blogId, title, image, description, user, date, i }) => {
         >
           <div className="mt-8 ">
             <img
-              src={`https://ms-blog.onrender.com/img/${image}`}
+              src={`${process.env.URL}/img/${image}`}
               className="w-40 h-40 rounded-lg  object-cover "
             />
             <div className=" mt-6 ">
@@ -101,7 +101,7 @@ const MyBlogs = ({ blogId, title, image, description, user, date, i }) => {
                 {mine.name}{" "}
               </h1>
               <Avatar
-                src={`https://ms-blog.onrender.com/profile/${mine.photo}`}
+                src={`${process.env.URL}/profile/${mine.photo}`}
               />
             </div>
           </div>

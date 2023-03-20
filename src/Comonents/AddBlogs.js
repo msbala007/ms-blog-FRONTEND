@@ -30,11 +30,10 @@ const AddBlogs = () => {
   formData.append("user", id);
   formData.append("description", value.description);
 
- 
   const createPost = async () => {
-   setSpin(true)
+    setSpin(true);
     const res = await axios.post(
-      "https://ms-blog.onrender.com/v1/blog/post",
+      `${process.env.URL}/v1/post`,
       formData
       // {
       // mode: "cors",
@@ -45,9 +44,9 @@ const AddBlogs = () => {
       // },
       // }
     );
-  
+
     const data = await res.blog;
-   setSpin(false);
+    setSpin(false);
     return data;
   };
 

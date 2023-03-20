@@ -27,7 +27,7 @@ const Auth = () => {
   };
 
   const userAccount = async (type = "login") => {
-    const res = await axios.post(`https://ms-blog.onrender.com/user/${type}`, {
+    const res = await axios.post(`${process.env.URL}/user/${type}`, {
       email: value.email,
       password: value.password,
     }).catch((error)=>{
@@ -44,14 +44,7 @@ const Auth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (
-    // !value.email &&
-    // value.email.trim() === "" &&
-    // !value.password &&
-    // value.password.trim() < 8
-    // ) {
-    // return;
-    // }
+   
     await userAccount("login")
       .then((data) => localStorage.setItem("userId", data._id))
       .then(() => dispatch(authActions.login()))
@@ -148,3 +141,9 @@ const Auth = () => {
 };
 
 export default Auth;
+
+
+
+
+
+

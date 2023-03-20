@@ -30,7 +30,7 @@ const Blogs = ({ blogId, title, image, description, user, date, i }) => {
   const deletePost = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/v1/blog/post/delete/${id}`
+        `${process.env.URL}/v1/blog/post/delete/${id}`
       );
       const data = await res.data.blog;
       return data;
@@ -60,7 +60,7 @@ const Blogs = ({ blogId, title, image, description, user, date, i }) => {
         >
           <div className="mt-8 ">
             <img
-              src={`https://ms-blog.onrender.com/img/${image}`}
+              src={`${process.env.URL}/img/${image}`}
               className="w-40 h-40 rounded-lg  object-cover "
             />
             <div className=" mt-6 ">
@@ -123,7 +123,7 @@ const Blogs = ({ blogId, title, image, description, user, date, i }) => {
               )}
 
               <Avatar
-              src={`https://ms-blog.onrender.com/profile/${photo}`}
+              src={`${process.env.URL}/profile/${photo}`}
               />
               <h1 className="p-2 ">{name}</h1>
             </div>

@@ -24,7 +24,7 @@ const Header = () => {
   };
   const id = localStorage.getItem("userId");
   const geUserDetails = async () => {
-    const res = await axios.get(`https://ms-blog.onrender.com/user/${id}`);
+    const res = await axios.get(`${process.env.URL}/user/${id}`);
     const data = await res.data.userblogs;
     setuser({
       name: data.name,
@@ -109,7 +109,7 @@ const Header = () => {
               <div className="flex items-center space-x-2">
                 <h3 className=" line-clamp-1">{user.name}</h3>
                 <Avatar
-                  src={`https://ms-blog.onrender.com/profile/${user.pic}`}
+                  src={`${process.env.URL}/profile/${user.pic}`}
                 />{" "}
               </div>
             </Link>

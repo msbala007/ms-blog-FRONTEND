@@ -29,7 +29,7 @@ const Blog = () => {
   const getPost = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("https://ms-blog.onrender.com/v1/blog");
+      const res = await axios.get(`${process.env.URL}/v1/blog`);
       setLoading(false);
       const data = await res.data.blog;
 
@@ -39,7 +39,7 @@ const Blog = () => {
     }
   };
   const geUserDetails = async () => {
-    const res = await axios.get(`https://ms-blog.onrender.com/v1/blog/${id}`);
+    const res = await axios.get(`${process.env.URL}/v1/blog/${id}`);
     const userData = await res.data.blogs;
     // console.log("{/////", userData);
     //
@@ -49,7 +49,7 @@ const Blog = () => {
   const deletePost = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/v1/blog/post/delete/${id}`
+        `${process.env.URL}/v1/blog/post/delete/${id}`
       );
       const data = await res.data.blog;
       return data;

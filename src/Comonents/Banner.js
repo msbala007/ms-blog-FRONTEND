@@ -12,7 +12,7 @@ const Banner = ({ blog }) => {
   const id = localStorage.getItem("userId");
   const userBlogs = async () => {
     const res = await axios.get(
-      `https://ms-blog.onrender.com/v1/blog/user/${id}`
+      `${process.env.URL}/v1/post/v1/blog/user/${id}`
     );
 
     const data = await res.data.blogs.blogs;
@@ -90,22 +90,14 @@ const Banner = ({ blog }) => {
                   {description}
                 </motion.h1>
                 <img
-                  src={`https://ms-blog.onrender.com/img/${image}`}
+                  src={`${process.env.URL}/img/${image}`}
                   className="w-full h-52 xl:h-96 rounded-lg  object-cover "
                 />
               </div>
             </div>
           ))}
 
-          {/* <div> */}
-          {/* <img */}
-          {/* // src="http://localhost:5000/img/Blog-post-image-1671953499037.jpeg" */}
-          {/* // className="w-full h-52 rounded-lg  object-cover " */}
-          {/* // /> */}
-          {/* </div> */}
-          {/* <div> */}
-          {/* <h1>bala</h1> */}
-          {/* </div> */}
+         
         </Carousel>
       </div>
     </>

@@ -33,7 +33,7 @@ const Auth = () => {
 
   const userAccount = async (type = "signup") => {
     const res = await axios
-      .post(`https://ms-blog.onrender.com/user/${type}`, {
+      .post(`${process.env.URL}/v1/post/user/${type}`, {
         name: value.name,
         email: value.email,
         password: value.password,

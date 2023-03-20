@@ -35,7 +35,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const geUserDetails = async () => {
-    const res = await axios.get(`https://ms-blog.onrender.com/user/${id}`);
+    const res = await axios.get(`${process.env.URL}/user/${id}`);
     const data = await res.data.userblogs;
     setuser({
       name: data.name,
@@ -62,7 +62,7 @@ const Profile = () => {
   const updateUserDetails = async () => {
     setSpin(true);
     const res = await axios.put(
-      `https://ms-blog.onrender.com/user/profile/${id}`,
+      `${process.env.URL}/user/profile/${id}`,
       formData,
       {
         headers: {
@@ -94,7 +94,7 @@ const Profile = () => {
           <div className="flex flex-col justify-center  lg:w-96 xl:w-96 space-y-4 ">
             <div className="flex justify-center relative">
               <img
-                src={`https://ms-blog.onrender.com/profile/${user.pic}`}
+                src={`${process.env.URL}/profile/${user.pic}`}
                 className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-black shadow-2xl "
               />
 
